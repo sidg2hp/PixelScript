@@ -1,0 +1,6 @@
+easyocr>=1.7
+opencv-python-headless>=4.8
+numpy>=1.24
+Pillow>=10.0
+transformers>=4.35,<5.0  # TrOCR handwriting model (5.x breaks TrOCR processor API)
+sentencepiece>=0.1        # tokenizer used by some TrOCR checkpoints
