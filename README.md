@@ -38,7 +38,7 @@ The pipeline is split into three focused layers:
 **Terminal output:**
 ```
 ------------------------------------------------------------
-SmartEye OCR Pipeline
+PixelScript OCR Pipeline
 Invoice No: INV-2024-00123
 Date: 07 September 2026
 Amount Due: $1,234.56

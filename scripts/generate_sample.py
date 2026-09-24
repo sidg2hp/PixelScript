@@ -16,7 +16,7 @@ img = Image.new("RGB", (W, H), color=(255, 255, 255))
 draw = ImageDraw.Draw(img)
 
 lines = [
-    "SmartEye OCR Pipeline",
+    "PixelScript OCR Pipeline",
     "-------------------------------",
     "Invoice No: INV-2024-00123",
     "Date: 07 September 2026",
