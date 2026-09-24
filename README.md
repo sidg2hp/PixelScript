@@ -39,13 +39,15 @@ The pipeline is split into three focused layers:
 ```
 ------------------------------------------------------------
 PixelScript OCR Pipeline
-Invoice No: INV-2024-00123
-Date: 07 September 2026
-Amount Due: $1,234.56
+Invoice No:   INV-2024-00123
+Date:         07 September 2026
+Amount Due:   $1,234.56
+Bill To:      Acme Corp
+Status:       UNPAID
 Thank you for your business!
 ------------------------------------------------------------
 
-6 region(s) | avg confidence 85.3%
+14 region(s) | avg confidence 91.7%
 ```
 
 ### Handwritten text
