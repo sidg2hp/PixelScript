@@ -1,5 +1,5 @@
 """
-SmartEye OCR — CLI entry point.
+PixelScript — CLI entry point.
 
 Usage examples
 --------------

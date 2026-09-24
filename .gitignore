@@ -46,16 +46,16 @@ ehthumbs.db
 ~/.EasyOCR/
 ~/.cache/huggingface/
 
-# ── Pipeline outputs ─────────────────────────────────────────────────────────
-results/
-results/debug/
+# ── Pipeline outputs (keep the dir stub, ignore generated files) ─────────────
+results/*
+!results/.gitkeep
 
-# ── Sample images (keep the script, not the generated PNGs) ──────────────────
-samples/*.png
-samples/*.jpg
-samples/*.jpeg
-samples/*.tiff
-samples/*.bmp
+# ── Sample images (keep the dir stub, ignore generated PNGs) ─────────────────
+samples/*
+!samples/.gitkeep
+
+# ── Example assets committed to repo (always track) ──────────────────────────
+!examples/
 
 # ── Secrets / config overrides ───────────────────────────────────────────────
 .env
