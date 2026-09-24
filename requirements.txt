@@ -1,8 +1,18 @@
-torch>=2.0                # deep learning runtime (EasyOCR + TrOCR)
-torchvision>=0.15         # image transforms used by EasyOCR
-easyocr>=1.7              # printed-text OCR engine
-opencv-python-headless>=4.8  # image preprocessing
+# NOTE: This project uses --system-site-packages so PyTorch is inherited
+# from your base environment (Conda or system Python). Do NOT install torch
+# directly into the venv — having two copies causes C-extension conflicts.
+#
+# Verify torch is available in your base env first:
+#   python -c "import torch; print(torch.__version__)"  # must be >= 2.0
+#
+# If torch is missing from your base env, install it there:
+#   conda install pytorch torchvision -c pytorch          # Conda
+#   pip install torch torchvision                         # plain pip (system)
+
+easyocr>=1.7
+opencv-python-headless>=4.8
 numpy>=1.24
 Pillow>=10.0
 transformers>=4.35,<5.0   # TrOCR handwriting model (v5 breaks processor API)
-sentencepiece>=0.1        # tokenizer dependency for TrOCR
+sentencepiece>=0.1         # tokenizer dependency for TrOCR
+pytest>=7.0                # test runner

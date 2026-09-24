@@ -96,7 +96,15 @@ PixelScript/
 ## Setup
 
 ```bash
-# 1. Create venv (--system-site-packages reuses any existing torch install)
+# 1. Verify PyTorch >= 2.0 exists in your BASE environment (Conda or system)
+python -c "import torch; print(torch.__version__)"
+
+# If missing, install it in your BASE env first (not inside the venv):
+#   conda install pytorch torchvision -c pytorch
+#   -- or --
+#   pip install torch torchvision
+
+# 2. Create venv that inherits torch from the base env
 python -m venv .venv --system-site-packages
 
 # Windows
@@ -104,12 +112,17 @@ python -m venv .venv --system-site-packages
 # macOS / Linux
 source .venv/bin/activate
 
-# 2. Install dependencies
+# 3. Install the remaining dependencies (does NOT install torch into the venv)
 pip install -r requirements.txt
 ```
 
-> **Note:** EasyOCR downloads models (~100 MB) on first run to `~/.EasyOCR/`.  
-> TrOCR downloads its model (~400 MB) on first run to `~/.cache/huggingface/`.
+> **Why `--system-site-packages`?** PyTorch ships large compiled C extensions.
+> Installing a *second* copy inside the venv while one already exists in the base
+> environment causes a C-extension conflict and an `ImportError` at runtime.
+> Using `--system-site-packages` lets the venv reuse the single base-env copy.
+
+> **Model downloads:** EasyOCR fetches models (~100 MB) on first run to `~/.EasyOCR/`.  
+> TrOCR fetches its model (~400 MB) on first run to `~/.cache/huggingface/`.
 
 ---
 
